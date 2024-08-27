@@ -1,4 +1,20 @@
+body, html {
+    background-image: url('https://img.pikbest.com/backgrounds/20190420/blue-business-technology-information-security-banner-background_1889994.jpg!w700wp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+}
+
 .main {
     width: 300px;
     margin: 30px auto;
+}
+
+.text-center {
+    color: white;
 }
