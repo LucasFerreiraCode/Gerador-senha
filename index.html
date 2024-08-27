@@ -10,7 +10,7 @@
   </head>
   
   <body>
-
+    
     <div class="container d-flex justify-content-center align-items-start vh-100">
         <div class="text-center mt-5">
             <h2>Gerador de Senhas</h2>
@@ -18,7 +18,6 @@
             <button id="botao-gerar" class="btn btn-primary w-100" id="botao-gerar">Gere sua nova senha</button>
         </div>
     </div>
-
 
     <script>
       // Componentes
@@ -28,15 +27,14 @@
 
       botao.addEventListener('click', ()=>{
 
-        let senhaAtual = 'YUP'
-        for (let i = 0; i <10; i++){
+        let senhaAtual = 'L'
+        for (let i = 0; i <8; i++){
             senhaAtual +=regSenha [Math.floor(Math.random() *regSenha.length)]
         }
 
         campoSenha.value = senhaAtual
       
       })
-
     </script>
 
 
