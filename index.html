@@ -15,15 +15,30 @@
         <div class="text-center mt-5">
             <h2>Gerador de Senhas</h2>
             <input type="text" id="campo-senha" class="form-control my-3" placeholder="Sua senha será gerada aqui">
-            <button class="btn btn-primary w-100" id="botao-gerar">Gere sua nova senha</button>
+            <button id="botao-gerar" class="btn btn-primary w-100" id="botao-gerar">Gere sua nova senha</button>
         </div>
     </div>
+
 
     <script>
       // Componentes
       let campoSenha = document.getElementById('campo-senha');
       let botao = document.getElementById('botao-gerar');
+      let regSenha =  '!@#$%&*0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?@#$%&*'
+
+      botao.addEventListener('click', ()=>{
+
+        let senhaAtual = 'YUP'
+        for (let i = 0; i <10; i++){
+            senhaAtual +=regSenha [Math.floor(Math.random() *regSenha.length)]
+        }
+
+        campoSenha.value = senhaAtual
+      
+      })
+
     </script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
