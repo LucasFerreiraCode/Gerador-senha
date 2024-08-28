@@ -26,6 +26,9 @@
           <input type="text" id="campo-senha" class="form-control my-3 text-center"
             placeholder="Sua senha será gerada aqui">
 
+            <label for="slider">Quantidade de caracteres: <span id="slider-value">10</span></label>
+            <input type="range" id="slider" class="form-range" min="6" max="20" value="10" oninput="updateSliderValue(this.value)">
+
           <button id="botao-gerar" class="btn btn-primary w-100" id="botao-gerar">Gere sua nova senha</button>
         </div>
 

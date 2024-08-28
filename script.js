@@ -2,7 +2,14 @@
 let campoSenha = document.getElementById('campo-senha');
 let botao = document.getElementById('botao-gerar');
 let botaoCopiar = document.getElementById('botao-copiar');
+let slider = document.getElementById('slider');
+let sliderValue = document.getElementById('slider-value');
 let regSenha =  '!@#$%&*0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?@#$%&*^'
+
+      // Função para atualizar o valor exibido do slider
+      function updateSliderValue(value) {
+        sliderValue.textContent = value;
+      }
 
 botao.addEventListener('click', ()=>{
 
