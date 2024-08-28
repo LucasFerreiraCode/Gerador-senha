@@ -55,3 +55,10 @@ html {
     background-color: #0d6efd;
 }
 
+.conteudo-secundaria {
+    padding: 2rem;
+}
+
+.marcacao-01 {
+    display: flex;
+}

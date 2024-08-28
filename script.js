@@ -1,6 +1,6 @@
 // Componentes
 let campoSenha = document.getElementById('campo-senha');
-let botaoGerar = document.getElementById('botao-gerar'); // Corrigido para 'botaoGerar'
+let botaoGerar = document.getElementById('botao-gerar');
 let botaoCopiar = document.getElementById('botao-copiar');
 let slider = document.getElementById('slider');
 let sliderValue = document.getElementById('slider-value');
@@ -29,4 +29,35 @@ botaoCopiar.addEventListener('click', () => {
     }).catch(err => {
         console.error('Erro ao copiar para a área de transferência: ', err);
     });
+});
+
+document.getElementById('botao-gerar').addEventListener('click', function() {
+    let senha = gerarSenhaAleatoria(); // Função que você deve ter para gerar a senha
+    const usarMaiusculas = document.getElementById('checkbox-maiusculas').checked;
+    
+    if (usarMaiusculas) {
+        senha = converterParaMaiusculas(senha);
+    }
+
+    document.getElementById('campo-senha').value = senha;
+});
+
+function gerarSenhaAleatoria() {
+    const caracteres = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    let senha = '';
+    const comprimento = document.getElementById('slider').value;
+
+    for (let i = 0; i < comprimento; i++) {
+        senha += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+    }
+
+    return senha;
+}
+
+function converterParaMaiusculas(texto) {
+    return texto.toUpperCase();
+}
+
+document.getElementById('slider').addEventListener('input', function() {
+    document.getElementById('slider-value').textContent = this.value;
 });
