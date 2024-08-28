@@ -8,7 +8,6 @@ html {
     margin: 0;
     padding: 0;
     width: 100%;
-
 }
 
 .main {
@@ -59,6 +58,15 @@ html {
     padding: 2rem;
 }
 
-.marcacao-01 {
+.checkbox-container {
     display: flex;
+    align-items: center;
+}
+
+.checkbox-container input {
+    margin-right: 8px;
+}
+
+.letras-maiusculas {
+    color: white;
 }
