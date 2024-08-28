@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     background-image: url('https://img.pikbest.com/backgrounds/20190420/blue-business-technology-information-security-banner-background_1889994.jpg!w700wp');
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,4 +18,39 @@ body, html {
 
 .text-center {
     color: white;
+}
+
+.texto-footer {
+    color: black;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.rodape {
+    color: var(--cor-primaria);
+    background-color: #0d6efd;
+    padding: 24px;
+    justify-content: right;
+}
+
+.btn-copiar:hover {
+    opacity: 0.9;
+}
+
+.info-gerador {
+    display: flex;
+    flex-direction: column;
+}
+
+#botao-copiar {
+    width: 100% !important;
+    height: auto;
+    color: white;
+    background-color: #0d6efd;
 }
