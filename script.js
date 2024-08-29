@@ -1,36 +1,14 @@
-// Substitua este bloco:
-document.getElementById('botao-gerar').addEventListener('click', function() {
-    let senha = gerarSenhaAleatoria(); // Função que você deve ter para gerar a senha
-    const usarMaiusculas = document.getElementById('checkbox-maiusculas').checked;
-    
-    if (usarMaiusculas) {
-        senha = converterParaMaiusculas(senha);
-    }
+// Função para atualizar o valor mostrado ao lado do slider
+function updateSliderValue(value) {
+    document.getElementById('slider-value').textContent = value;
+}
 
-    document.getElementById('campo-senha').value = senha;
+// Define o evento de entrada para o slider
+document.getElementById('slider').addEventListener('input', function() {
+    updateSliderValue(this.value);
 });
 
-document.getElementById('botao-gerar').addEventListener('click', function() {
-    let usarApenasNumeros = document.getElementById('checkbox-numeros').checked;
-    let senha = usarApenasNumeros ? gerarSenhaNumerica() : gerarSenhaAleatoria(); // Função que você deve ter para gerar a senha
-
-    const usarMaiusculas = document.getElementById('checkbox-maiusculas').checked;
-    
-    if (usarMaiusculas && !usarApenasNumeros) {
-        senha = converterParaMaiusculas(senha);
-    }
-
-    document.getElementById('campo-senha').value = senha;
-});
-
-document.getElementById('botao-gerar').addEventListener('click', function() {
-    let usarApenasMinusculas = document.getElementById('checkbox-minusculas').checked;
-    let senha = usarApenasMinusculas ? gerarSenhaApenasMinusculas() : gerarSenhaAleatoria();
-
-    document.getElementById('campo-senha').value = senha;
-});
-
-// Por este bloco simplificado:
+// Função para gerar a senha com base nas opções selecionadas
 document.getElementById('botao-gerar').addEventListener('click', function() {
     let usarMaiusculas = document.getElementById('checkbox-maiusculas').checked;
     let usarMinusculas = document.getElementById('checkbox-minusculas').checked;
@@ -48,17 +26,22 @@ document.getElementById('botao-gerar').addEventListener('click', function() {
         caracteres += '0123456789';
     }
 
-    // Se nenhum checkbox estiver marcado, usar todos os caracteres
     if (caracteres === '') {
         caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     }
 
-    let senha = '';
     let comprimento = document.getElementById('slider').value;
-
+    let senha = '';
     for (let i = 0; i < comprimento; i++) {
         senha += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
     }
 
     document.getElementById('campo-senha').value = senha;
+});
+
+// Função para copiar a senha para a área de transferência
+document.getElementById('botao-copiar').addEventListener('click', function() {
+    let campoSenha = document.getElementById('campo-senha');
+    campoSenha.select(); // Seleciona o texto no campo
+    document.execCommand('copy'); // Copia o texto selecionado
 });
