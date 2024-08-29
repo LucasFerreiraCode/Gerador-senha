@@ -71,9 +71,13 @@ html {
     color: white;
 }
 
-.checkbox-container {
+.checkbox-conteiner {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 20% 0 30%;
+}
+
+.checkbox-container {
     margin: 0 20% 0 30%;
 }
