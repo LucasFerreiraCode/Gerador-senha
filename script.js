@@ -4,7 +4,7 @@ let botaoGerar = document.getElementById('botao-gerar');
 let botaoCopiar = document.getElementById('botao-copiar');
 let slider = document.getElementById('slider');
 let sliderValue = document.getElementById('slider-value');
-let regSenha = '!@#$%&*0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?@#$%&*^'
+let regSenha = '!@#$%&*0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?@#$%&*+-=^'
 
 // Função para atualizar o valor exibido do slider
 function updateSliderValue(value) {
@@ -61,3 +61,48 @@ function converterParaMaiusculas(texto) {
 document.getElementById('slider').addEventListener('input', function() {
     document.getElementById('slider-value').textContent = this.value;
 });
+
+document.getElementById('botao-gerar').addEventListener('click', function() {
+    let usarApenasNumeros = document.getElementById('checkbox-numeros').checked;
+    let senha = usarApenasNumeros ? gerarSenhaNumerica() : gerarSenhaAleatoria(); // Função que você deve ter para gerar a senha
+
+    const usarMaiusculas = document.getElementById('checkbox-maiusculas').checked;
+    
+    if (usarMaiusculas && !usarApenasNumeros) {
+        senha = converterParaMaiusculas(senha);
+    }
+
+    document.getElementById('campo-senha').value = senha;
+});
+
+function gerarSenhaNumerica() {
+    const caracteres = '0123456789'; // Apenas números
+    let senha = '';
+    const comprimento = document.getElementById('slider').value;
+
+    for (let i = 0; i < comprimento; i++) {
+        senha += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+    }
+
+    return senha;
+}
+
+document.getElementById('botao-gerar').addEventListener('click', function() {
+    let usarApenasMinusculas = document.getElementById('checkbox-minusculas').checked;
+    let senha = usarApenasMinusculas ? gerarSenhaApenasMinusculas() : gerarSenhaAleatoria();
+
+    document.getElementById('campo-senha').value = senha;
+});
+
+function gerarSenhaApenasMinusculas() {
+    const caracteres = 'abcdefghijklmnopqrstuvwxyz'; // Apenas letras minúsculas
+    let senha = '';
+    const comprimento = document.getElementById('slider').value;
+
+    for (let i = 0; i < comprimento; i++) {
+        senha += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+    }
+
+    return senha;
+}
+

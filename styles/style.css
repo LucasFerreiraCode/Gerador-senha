@@ -70,3 +70,10 @@ html {
 .letras-maiusculas {
     color: white;
 }
+
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20% 0 30%;
+}
