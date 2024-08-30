@@ -87,9 +87,15 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 20% 0 30%;
+    margin: 0 30% 0 30%;
 }
 
 .checkbox-container {
-    margin: 0 20% 0 30%;
+    margin: 0 20% 0 23%;
+    gap: 1rem;
+}
+
+input[type="checkbox"] {
+    transform: scale(2.0);
+
 }
