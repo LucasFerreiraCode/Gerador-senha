@@ -42,6 +42,14 @@ document.getElementById('botao-gerar').addEventListener('click', function() {
 // Função para copiar a senha para a área de transferência
 document.getElementById('botao-copiar').addEventListener('click', function() {
     let campoSenha = document.getElementById('campo-senha');
-    campoSenha.select(); // Seleciona o texto no campo
-    document.execCommand('copy'); // Copia o texto selecionado
+
+    if (campoSenha.value !== "") {
+        campoSenha.select();
+        campoSenha.setSelectionRange(0, 99999); // Para dispositivos móveis
+        document.execCommand('copy');
+
+        alert("Senha copiada com sucesso!");
+    } else {
+        alert("Por favor, gere uma senha antes de copiá-la.");
+    }
 });
