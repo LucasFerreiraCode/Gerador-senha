@@ -30,6 +30,10 @@ html {
     font-size: 0.875rem;
 }
 
+.texto-principal {
+    font-size: 25px;
+}
+
 .rodape {
     color: var(--cor-primaria);
     background-color: #0d6efd;
@@ -97,5 +101,4 @@ html {
 
 input[type="checkbox"] {
     transform: scale(2.0);
-
 }
