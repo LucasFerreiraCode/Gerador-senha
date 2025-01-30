@@ -7,63 +7,45 @@
   <link rel="stylesheet" href="./styles/style.css">
   <title>Gerador de Senhas</title>
   <link rel="icon" href="./img/key_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="container d-flex justify-content-center align-items-start vh-100">
-    <div class="text-center mt-5">
+  <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+    <div class="text-center">
       <section class="conteudo-principal">
         <h3 class="texto-principal">Precisa de uma senha segura e aleatória?<br> Gere agora abaixo:</h3>
         <p>Mantenha suas informações seguras com uma senha gerada automaticamente.</p>
       </section>
 
       <div class="gerador">
-        <div class="info-gerador">
-          <h2>Gerador de Senhas</h2>
-          <input type="text" id="campo-senha" class="form-control my-3 text-center"
-            placeholder="Sua senha será gerada aqui">
+        <h2>Gerador de Senhas</h2>
+        <input type="text" id="campo-senha" class="form-control my-3 text-center" placeholder="Sua senha será gerada aqui">
+        
+        <label for="slider">Quantidade de caracteres: <span id="slider-value">10</span></label>
+        <input type="range" id="slider" class="form-range" min="6" max="20" value="10" oninput="updateSliderValue(this.value)">
 
-          <label for="slider">Quantidade de caracteres: <span id="slider-value">10</span></label>
-          <input type="range" id="slider" class="form-range" min="6" max="20" value="10"
-            oninput="updateSliderValue(this.value)">
-
-          <button id="botao-gerar" class="btn btn-primary w-100 mt-3">Gere sua nova senha</button>
-        </div>
-
+        <button id="botao-gerar" class="btn btn-primary w-100 mt-3">Gerar Senha</button>
         <button id="botao-copiar" class="btn btn-secondary w-100 mt-2">Copiar Senha</button>
       </div>
 
       <div class="config-caracteres">
-        <h1 class="conteudo-secundaria">Caracteres usados:</h1>
+        <h4 class="conteudo-secundaria">Caracteres usados:</h4>
         <div class="checkbox-container">
-          <input type="checkbox" id="checkbox-maiusculas" class="marcacao-01">
-          <span class="letras-maiusculas">ABC</span>
-
-          <div class="checkbox-container">
-            <input type="checkbox" id="checkbox-numeros" class="marcacao-01">
-            <span class="letras-maiusculas">123</span>
-
-            <div class="checkbox-container">
-              <input type="checkbox" id="checkbox-minusculas" class="marcacao-01">
-              <span class="letras-minusculas">abc</span>
-            </div>
-          </div>
+          <label><input type="checkbox" id="checkbox-maiusculas"> <span>ABC</span></label>
+          <label><input type="checkbox" id="checkbox-numeros"> <span>123</span></label>
+          <label><input type="checkbox" id="checkbox-minusculas"> <span>abc</span></label>
         </div>
       </div>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="./script.js"></script>
-
   <footer class="rodape">
-    <p class="texto-footer">Desenvolvido por <span><a href="https://instagram.com/lucasferreira__013"
-          target="_blank">Lucas Ferreira</a></span> © 2024</p>
+    <p class="texto-footer">Desenvolvido por <a href="https://instagram.com/lucasferreira__013" target="_blank">Lucas Ferreira</a> © 2024</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>
