@@ -75,9 +75,12 @@ body, html {
 .checkbox-container label {
     display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    gap: 8px;
     color: white;
     font-size: 1rem;
+    width: 100px; /* Define uma largura padrão para melhor alinhamento */
+    text-align: center;
 }
 
 input[type="checkbox"] {
@@ -95,7 +98,10 @@ input[type="checkbox"] {
     }
     
     .checkbox-container {
-        flex-direction: column;
+        display: flex;
+        justify-content: center;
         align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
     }
 }
